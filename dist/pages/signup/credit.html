@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="/asset/favicon-3feb47d2.png" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Rent Movies and TV Shows on DVD and Blu-ray. Fast, free delivery. No late fees."
+    />
+    
+    <script type="module" crossorigin src="/asset/credit/credit-6fbeef85.js"></script>
+    <link rel="modulepreload" crossorigin href="/asset/Navbar/Navbar-65c3df79.js">
+    <link rel="stylesheet" href="/asset/credit/credit-8a028279.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg fixed-top px-2 px-md-3 py-2"
+      id="navbar"
+    >
+      <div class="container">
+        <div class="row">
+          <div id="nav-logo-warp" class="col-2 col-md-2">
+            <a class="navbar-brand navbar-logo d-block" href="../main.html"></a>
+          </div>
+          <div id="nav-search-warp" class="col-12 col-md-6 d-none d-md-block">
+            <div class="search-input-group row gx-0">
+              <div class="col-10 col-md-12">
+                <form method="post" action="../search.html">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control border-secondary"
+                      placeholder="Search Movies, TV shows, actors and directors"
+                      aria-label="Search Movies, TV shows, actors and directors"
+                      aria-describedby="extra-buttons"
+                    />
+                    <button
+                      class="btn btn-secondary text-white px-3"
+                      type="button"
+                      id="search-button"
+                    >
+                      <i class="bi-search"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="col-2 d-flex justify-content-end">
+                <button
+                  class="btn btn-secondary text-white d-block d-md-none"
+                  type="button"
+                  id="nav-search-off"
+                >
+                  <i class="bi-x-lg"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            id="nav-button-warp"
+            class="col-10 col-md-4 d-flex justify-content-end align-items-center"
+          >
+            <!-- Only Mobile -->
+            <h6
+              id="nav-search-on"
+              class="text-white mb-0 d-block d-md-none"
+              type="button"
+            >
+              <i class="bi-search"></i>
+            </h6>
+            <!-- Show When User Logout-->
+            <div class="guest d-flex">
+              <a class="btn btn-dark" href="../signin.html" role="button"
+                >Sign In</a
+              >
+              <a class="btn btn-success" href="./plan.html" role="button"
+                >Sign Up</a
+              >
+            </div>
+
+            <!-- Show When Login-->
+            <!-- <div class="user d-flex"> -->
+            <!-- <div class="dropdown d-none d-md-block">
+             <h5
+               class="dropdown-toggle text-white mb-0"
+               role="button"
+               data-toggle="dropdown"
+               aria-expanded="false"
+             >
+               BROWSE
+             </h5>
+             <div class="dropdown-menu">
+               <a class="dropdown-item" href="/NewReleases">New and Popular</a>
+               <a class="dropdown-item" href="/TVShows">TV Shows</a>
+               <a class="dropdown-item" href="/Family">Family</a>
+               <a class="dropdown-item" href="/ClosedCaptions"
+                 >Closed Captions</a
+               >
+               <a class="dropdown-item" href="/AudioDescription"
+                 >Audio Description</a
+               >
+               <a class="dropdown-item" href="/Top100">Netflix Top 100</a>
+               <a class="dropdown-item" href="/TopPicks">Top Picks For You</a>
+               <a class="dropdown-item" href="/Collections">Collections</a>
+               <a class="dropdown-item" href="/Bluray">Try Blu-ray</a>
+               <a class="dropdown-item" href="/RateMovies"
+                 >Rate Movies &amp; TV</a
+               >
+               <a class="dropdown-item" href="/TastePreferences"
+                 >Taste Preferences</a
+               >
+               <a class="dropdown-item" href="/MoviesYouveSeen"
+                 >Rated &amp; Reviewed</a
+               >
+               <a class="dropdown-item" href="/Download">
+                 Download&nbsp;&nbsp;<i
+                   class="fa fa-download"
+                   aria-hidden="true"
+                 ></i>
+               </a>
+             </div>
+           </div> -->
+            <!-- <h5 class="text-white mb-0 d-none d-md-block">QUEUE</h5> -->
+            <!-- <h4
+             class="text-white mb-0 d-block d-md-none"
+             role="button"
+             data-toggle="dropdown"
+             aria-expanded="false"
+           >
+             <i class="bi-save"></i>
+           </h4>
+         </div> -->
+            <div class="dropdown">
+              <h4
+                class="text-white mb-0"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi-list"></i>
+              </h4>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- signup container -->
+    <div class="pt-5" id="credit-container-wrapper">
+      <div class="container" id="credit-container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <h3 class="mb-1">Setup your payment</h3>
+            <h6>No commitments, cancel the DVD service at anytime</h6>
+            <h6 class="mb-4">
+              <!-- show user's selection from plan.html -->
+              Plan: 2 discs out-at-a-time (DVDs and Blu-rays), unlimited
+              exchanges for $14.99 a month.
+            </h6>
+
+            <form id="signup-form" novalidate>
+              <div class="form-floating">
+                <input
+                  required
+                  class="form-control validate-first"
+                  id="first-name"
+                  placeholder="First Name"
+                />
+                <label for="floatingInput">First Name</label>
+                <div class="invalid-feedback position-absolute">
+                  First name is required
+                </div>
+              </div>
+              <div class="form-floating">
+                <input
+                  required
+                  class="form-control validate-first"
+                  id="last-name"
+                  placeholder="Last Name"
+                />
+                <label for="floatingInput">Last Name</label>
+                <div class="invalid-feedback position-absolute">
+                  Last name is required
+                </div>
+              </div>
+              <div class="form-floating">
+                <input
+                  required
+                  class="form-control validate-first input-credit"
+                  id="card-number"
+                  placeholder="Card Number"
+                />
+                <label for="floatingInput">Card Number</label>
+                <div class="credit-wrap mt-1">
+                  <img
+                    src="/asset/visa-f52dab94.png"
+                    id="visa"
+                    class="credit-logo"
+                  />
+                  <img
+                    src="data:image/png;base64,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"
+                    id="mastercard"
+                    class="credit-logo"
+                  />
+                  <img
+                    src="/asset/amex-32900943.png"
+                    id="amex"
+                    class="credit-logo"
+                  />
+                  <img
+                    src="/asset/discover-8ae0b32c.png"
+                    id="discover"
+                    class="credit-logo"
+                  />
+                </div>
+                <div class="invalid-feedback position-absolute">
+                  Card number is required
+                </div>
+              </div>
+
+              <div class="form-floating">
+                <input
+                  required
+                  class="form-control validate-first input-expiration"
+                  id="card-expiration"
+                  placeholder="Card Expiration"
+                />
+                <label for="floatingInput">Card Expiration (MM/YY)</label>
+                <div class="invalid-feedback position-absolute">
+                  Valid expiration date is required
+                </div>
+              </div>
+              <div class="form-floating">
+                <input
+                  required
+                  class="form-control validate-first input-security"
+                  id="card-security-code"
+                  placeholder="Security code"
+                />
+                <label for="floatingInput">Security Code (CVV)</label>
+                <div class="invalid-feedback position-absolute">
+                  Security code is required
+                </div>
+              </div>
+              <div class="form-floating">
+                <input
+                  required
+                  class="form-control validate-first"
+                  id="billing-zip-code"
+                  placeholder="Billing Zip Code"
+                />
+                <label for="floatingInput"> Billing Zip Code </label>
+                <div class="invalid-feedback position-absolute">
+                  Billing zip code is required
+                </div>
+              </div>
+              <div class="col-12 col-md-6 mt-5">
+                <button type="submit" class="btn btn-success w-100">
+                  Start Membership
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container py-5" id="footer-container">
+        <div class="row">
+          <div class="col-md-12 text-secondary">
+            <h3 class="mb-2">
+              For order related questions or problems, email to:
+            </h3>
+            <a
+              href="mailto: support@cafedvd.com"
+              class="btn-link h4 text-secondary"
+            >
+              support@cafedvd.com
+            </a>
+          </div>
+          <div class="col my-3">
+            <div class="row">
+              <div class="col-md-3 col-lg-2 links">
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Help Center</a>
+                </div>
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Sign Up</a>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-2 links">
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Terms of Use</a>
+                </div>
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Privacy</a>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-2 links">
+                <div>
+                  <a class="btn btn-link text-secondary px-0"
+                    >How Cafedvd Works</a
+                  >
+                </div>
+                <div>
+                  <a class="btn btn-link text-secondary px-0"
+                    >Browse all genres</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-12 text-secondary">
+            © <span id="current-year">2023</span> cafedvd, Inc.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

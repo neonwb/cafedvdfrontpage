@@ -1,0 +1,47 @@
+.navbar{
+    min-height: 75px;
+    .navbar-logo{
+        background: url('../../assets/images/white_logo.png');
+        background-repeat: no-repeat;
+        background-size: cover;    
+        width: 101px;
+        height: 47px;
+    }    
+    .row{
+        flex: 1;
+        align-items: center;
+    }
+    #nav-button-warp, & .guest, & .user{
+        gap:15px;
+    }
+    & .guest{
+        button{
+            min-width: 90px;
+        }
+    }
+    
+}
+
+
+@include media-breakpoint-down(sm) { 
+    .navbar{
+        #nav-button-warp, & .guest, & .user{
+            gap:10px;
+        }
+    }
+ }
+
+// @include media-breakpoint-down(md) { 
+//     .navbar{
+//         .button-warp, & .guest, & .user{
+//             gap:30px;
+//         }
+//     }
+//  }
+
+// @include media-breakpoint-down(lg) { 
+//     .navbar{
+//         background-color:red;
+//     }
+//  }
+ 

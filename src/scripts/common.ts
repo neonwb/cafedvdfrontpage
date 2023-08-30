@@ -1,0 +1,2 @@
+// SCRIPT
+import "bootstrap";

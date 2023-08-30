@@ -1,0 +1,11 @@
+.popover-w400{
+    --bs-popover-max-width: 400px;
+}
+
+.movie-summary{
+    a{
+        color: var(--bs-body-color);
+        --bs-link-underline-opacity: 0;
+        text-decoration: none !important;
+    }
+}

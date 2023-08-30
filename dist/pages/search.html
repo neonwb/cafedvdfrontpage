@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="/asset/favicon-3feb47d2.png" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Rent Movies and TV Shows on DVD and Blu-ray. Fast, free delivery. No late fees."
+    />
+    
+    <script type="module" crossorigin src="/asset/search/search-a82291b3.js"></script>
+    <link rel="modulepreload" crossorigin href="/asset/Navbar/Navbar-65c3df79.js">
+    <link rel="modulepreload" crossorigin href="/asset/Queue/Queue-6b74ba0f.js">
+    <link rel="stylesheet" href="/asset/search/search-cfa569a7.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg fixed-top px-2 px-md-3 py-2"
+      id="navbar"
+    >
+      <div class="container">
+        <div class="row">
+          <div id="nav-logo-warp" class="col-2 col-md-2">
+            <a class="navbar-brand navbar-logo d-block" href="./main.html"></a>
+          </div>
+          <div id="nav-search-warp" class="col-12 col-md-6 d-none d-md-block">
+            <div class="search-input-group row gx-0">
+              <div class="col-10 col-md-12">
+                <form method="post" action="./search.html">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control border-secondary"
+                      placeholder="Search Movies, TV shows, actors and directors"
+                      aria-label="Search Movies, TV shows, actors and directors"
+                      aria-describedby="extra-buttons"
+                    />
+                    <button
+                      class="btn btn-secondary text-white px-3"
+                      type="button"
+                      id="search-button"
+                    >
+                      <i class="bi-search"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="col-2 d-flex justify-content-end">
+                <button
+                  class="btn btn-secondary text-white d-block d-md-none"
+                  type="button"
+                  id="nav-search-off"
+                >
+                  <i class="bi-x-lg"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            id="nav-button-warp"
+            class="col-10 col-md-4 d-flex justify-content-end align-items-center"
+          >
+            <!-- Only Mobile -->
+            <h6
+              id="nav-search-on"
+              class="text-white mb-0 d-block d-md-none"
+              type="button"
+            >
+              <i class="bi-search"></i>
+            </h6>
+            <!-- Show When User Logout-->
+            <div class="guest d-flex">
+              <a class="btn btn-dark" href="./signin.html" role="button"
+                >Sign In</a
+              >
+              <a class="btn btn-success" href="./signup/plan.html" role="button"
+                >Sign Up</a
+              >
+            </div>
+
+            <!-- Show When Login-->
+            <!-- <div class="user d-flex"> -->
+            <!-- <div class="dropdown d-none d-md-block">
+             <h5
+               class="dropdown-toggle text-white mb-0"
+               role="button"
+               data-toggle="dropdown"
+               aria-expanded="false"
+             >
+               BROWSE
+             </h5>
+             <div class="dropdown-menu">
+               <a class="dropdown-item" href="/NewReleases">New and Popular</a>
+               <a class="dropdown-item" href="/TVShows">TV Shows</a>
+               <a class="dropdown-item" href="/Family">Family</a>
+               <a class="dropdown-item" href="/ClosedCaptions"
+                 >Closed Captions</a
+               >
+               <a class="dropdown-item" href="/AudioDescription"
+                 >Audio Description</a
+               >
+               <a class="dropdown-item" href="/Top100">Netflix Top 100</a>
+               <a class="dropdown-item" href="/TopPicks">Top Picks For You</a>
+               <a class="dropdown-item" href="/Collections">Collections</a>
+               <a class="dropdown-item" href="/Bluray">Try Blu-ray</a>
+               <a class="dropdown-item" href="/RateMovies"
+                 >Rate Movies &amp; TV</a
+               >
+               <a class="dropdown-item" href="/TastePreferences"
+                 >Taste Preferences</a
+               >
+               <a class="dropdown-item" href="/MoviesYouveSeen"
+                 >Rated &amp; Reviewed</a
+               >
+               <a class="dropdown-item" href="/Download">
+                 Download&nbsp;&nbsp;<i
+                   class="fa fa-download"
+                   aria-hidden="true"
+                 ></i>
+               </a>
+             </div>
+           </div> -->
+            <!-- <h5 class="text-white mb-0 d-none d-md-block">QUEUE</h5> -->
+            <!-- <h4
+             class="text-white mb-0 d-block d-md-none"
+             role="button"
+             data-toggle="dropdown"
+             aria-expanded="false"
+           >
+             <i class="bi-save"></i>
+           </h4>
+         </div> -->
+            <div class="dropdown">
+              <h4
+                class="text-white mb-0"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi-list"></i>
+              </h4>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <nav
+      class="navbar navbar-expand-lg sticky-top bg-body-tertiary"
+      id="filter"
+    >
+      <div class="container" id="filter-container">
+        <a class="navbar-brand">Filter by:</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#filter-items"
+          aria-controls="filter-items"
+          aria-expanded="false"
+          aria-label="filter-items"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="filter-items">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active">All</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">TV Shows</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">People</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Genres</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Collections</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="search-container-wrapper">
+      <div class="container py-3" id="search-container">
+        <div class="row align-items-baseline g-0">
+          <div class="col-12 col-sm-auto pb-2">
+            <span class="h2 me-3">Movies & TV Shows</span>
+          </div>
+          <div class="col-12 col-sm-auto pb-2">
+            <span class="h5">48 results for search</span>
+          </div>
+        </div>
+        <div class="row gx-0 movie-list" id="new-movies">
+          <div class="slim">
+            <span
+              data-dvd-toggle="overlay-info"
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Avatar: The Way of Water">
+                <img src="/asset/example-landscape-f9bbe12e.jpeg" />
+              </a>
+            </span>
+            <div class="row movie-meta g-0 py-1">
+              <div class="col-12 title">
+                <h5>Searching</h5>
+              </div>
+              <p class="col-12 col-md-auto h6 meta">
+                <span class="me-1">2021</span>
+                <span class="border me-1">PG-13</span>
+                <span>1h 53m</span>
+              </p>
+            </div>
+          </div>
+          <div class="slim">
+            <span
+              data-dvd-toggle="overlay-info"
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Avatar: The Way of Water">
+                <img src="/asset/example-landscape-f9bbe12e.jpeg" />
+              </a>
+            </span>
+            <div class="row movie-meta g-0 py-1">
+              <div class="col-12 title">
+                <h5>Searching</h5>
+              </div>
+              <p class="col-12 col-md-auto h6 meta">
+                <span class="me-1">2021</span>
+                <span class="border me-1">PG-13</span>
+                <span>1h 53m</span>
+              </p>
+            </div>
+          </div>
+          <div class="slim">
+            <span
+              data-dvd-toggle="overlay-info"
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Avatar: The Way of Water">
+                <img src="/asset/example-landscape-f9bbe12e.jpeg" />
+              </a>
+            </span>
+            <div class="row movie-meta g-0 py-1">
+              <div class="col-12 title">
+                <h5>Searching</h5>
+              </div>
+              <p class="col-12 col-md-auto h6 meta">
+                <span class="me-1">2021</span>
+                <span class="border me-1">PG-13</span>
+                <span>1h 53m</span>
+              </p>
+            </div>
+          </div>
+          <div class="slim">
+            <span
+              data-dvd-toggle="overlay-info"
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Avatar: The Way of Water">
+                <img src="/asset/example-landscape-f9bbe12e.jpeg" />
+              </a>
+            </span>
+            <div class="row movie-meta g-0 py-1">
+              <div class="col-12 title">
+                <h5>Searching</h5>
+              </div>
+              <p class="col-12 col-md-auto h6 meta">
+                <span class="me-1">2021</span>
+                <span class="border me-1">PG-13</span>
+                <span>1h 53m</span>
+              </p>
+            </div>
+          </div>
+          <div class="slim">
+            <span
+              data-dvd-toggle="overlay-info"
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Avatar: The Way of Water">
+                <img src="/asset/example-landscape-f9bbe12e.jpeg" />
+              </a>
+            </span>
+            <div class="row movie-meta g-0 py-1">
+              <div class="col-12 title">
+                <h5>Searching</h5>
+              </div>
+              <p class="col-12 col-md-auto h6 meta">
+                <span class="me-1">2021</span>
+                <span class="border me-1">PG-13</span>
+                <span>1h 53m</span>
+              </p>
+            </div>
+          </div>
+          <div class="slim">
+            <span
+              data-dvd-toggle="overlay-info"
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Avatar: The Way of Water">
+                <img src="/asset/example-landscape-f9bbe12e.jpeg" />
+              </a>
+            </span>
+            <div class="row movie-meta g-0 py-1">
+              <div class="col-12 title">
+                <h5>Searching</h5>
+              </div>
+              <p class="col-12 col-md-auto h6 meta">
+                <span class="me-1">2021</span>
+                <span class="border me-1">PG-13</span>
+                <span>1h 53m</span>
+              </p>
+            </div>
+          </div>
+          <div class="slim">
+            <span
+              data-dvd-toggle="overlay-info"
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Avatar: The Way of Water">
+                <img src="/asset/example-landscape-f9bbe12e.jpeg" />
+              </a>
+            </span>
+            <div class="row movie-meta g-0 py-1">
+              <div class="col-12 title">
+                <h5>Searching</h5>
+              </div>
+              <p class="col-12 col-md-auto h6 meta">
+                <span class="me-1">2021</span>
+                <span class="border me-1">PG-13</span>
+                <span>1h 53m</span>
+              </p>
+            </div>
+          </div>
+          <div class="slim">
+            <span
+              data-dvd-toggle="overlay-info"
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Avatar: The Way of Water">
+                <img src="/asset/example-landscape-f9bbe12e.jpeg" />
+              </a>
+            </span>
+            <div class="row movie-meta g-0 py-1">
+              <div class="col-12 title">
+                <h5>Searching</h5>
+              </div>
+              <p class="col-12 col-md-auto h6 meta">
+                <span class="me-1">2021</span>
+                <span class="border me-1">PG-13</span>
+                <span>1h 53m</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="collections-container">
+          <div class="row align-items-baseline g-0">
+            <div class="col-12 col-sm-auto pb-2">
+              <span class="h2 me-3">Collections</span>
+            </div>
+            <div class="col-12 col-sm-auto pb-2">
+              <span class="h5">4 results for search</span>
+            </div>
+          </div>
+          <div class="row gx-0 collections-list" id="collections">
+            <div class="slim">
+              <a href="./movie.html" title="Avatar: The Way of Water">
+                <img src="/asset/collection-e7a02745.jpeg" />
+              </a>
+              <div class="row collection-meta g-0 py-1">
+                <div class="col-12 title">
+                  <h5>Greg Boone's Picks</h5>
+                </div>
+              </div>
+            </div>
+            <div class="slim">
+              <a href="./movie.html" title="Avatar: The Way of Water">
+                <img src="/asset/collection-e7a02745.jpeg" />
+              </a>
+              <div class="row collection-meta g-0 py-1">
+                <div class="col-12 title">
+                  <h5>Star Trek</h5>
+                </div>
+              </div>
+            </div>
+            <div class="slim">
+              <a href="./movie.html" title="Avatar: The Way of Water">
+                <img src="/asset/collection-e7a02745.jpeg" />
+              </a>
+              <div class="row collection-meta g-0 py-1">
+                <div class="col-12 title">
+                  <h5>Sci-Fi Stories</h5>
+                </div>
+              </div>
+            </div>
+            <div class="slim">
+              <a href="./movie.html" title="Avatar: The Way of Water">
+                <img src="/asset/collection-e7a02745.jpeg" />
+              </a>
+              <div class="row collection-meta g-0 py-1">
+                <div class="col-12 title">
+                  <h5>Comic Con</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="how-it-works" class="d-flex align-items-center">
+        <div class="container">
+          <div class="content text-white">
+            <h2 class="mb-5">How it works</h2>
+            <div class="step-wrap">
+              <h3 class="order">1.</h3>
+              <div class="ps-3">
+                <h4>Create your list</h4>
+                <p>Browse from thousands of movies and shows.</p>
+              </div>
+            </div>
+            <div class="step-wrap">
+              <h3 class="order">2.</h3>
+              <div class="ps-3">
+                <h4>Free delivery</h4>
+                <p>We send out your disc the next business day.</p>
+              </div>
+            </div>
+            <div class="step-wrap">
+              <h3 class="order">3.</h3>
+              <div class="ps-3">
+                <h4>Watch and repeat</h4>
+                <p>Free returns, plus no due dates or late fees.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row g-3 signup-wrap">
+            <div class="col-12 col-sm-5">
+              <a class="btn btn-lg btn-success w-100" href="./signup/plan.html">
+                Sign Up
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div
+        class="modal fade queue-modal"
+        id="queue-modal"
+        tabindex="-1"
+        aria-labelledby="queue-modal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-body p-3 p-sm-4 pt-sm-3">
+              <div class="d-flex mb-3">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="row g-3 mb-4">
+                <div class="col-3 col-lg-2">
+                  <a href="./movie.html" title="thumbnail"
+                    ><img src="/asset/modal_rec1-5439d9f6.jpeg"
+                  /></a>
+                </div>
+                <div class="col-9 col-lg-7">
+                  <h5 id="queue-action-info"></h5>
+                  <a class="btn btn-link text-success h-2">Go to Queue</a>
+                </div>
+                <div class="col-12 col-lg-3" id="queue-btn-group">
+                  <div class="row">
+                    <div class="col-6 col-lg-12">
+                      <button
+                        id="move-top"
+                        class="btn btn-success w-100"
+                        data-movieid="81183713"
+                      >
+                        Move to top
+                      </button>
+                    </div>
+                    <div class="col-6 col-lg-12 mt-lg-3">
+                      <button
+                        id="undo-add"
+                        class="btn btn-outline-light w-100"
+                        data-movieid="81183713"
+                      >
+                        Undo Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-none d-sm-flex">
+                <h5>More like Star Wars: Episode IV: A New Hope</h5>
+              </div>
+              <div class="d-none d-sm-flex more-like-wrap">
+                <div class="more-like">
+                  <a href="./movie.html" title="thumbnail"
+                    ><img src="/asset/modal_thumbnail-53b9ada4.jpeg"
+                  /></a>
+                </div>
+                <div class="more-like">
+                  <a href="./movie.html" title="thumbnail"
+                    ><img src="/asset/modal_thumbnail2-4e8763df.jpeg"
+                  /></a>
+                </div>
+                <div class="more-like">
+                  <a href="./movie.html" title="thumbnail"
+                    ><img src="/asset/modal_thumbnail3-1fdeb9c0.jpeg"
+                  /></a>
+                </div>
+                <div class="more-like">
+                  <a href="./movie.html" title="thumbnail"
+                    ><img src="/asset/modal_thumbnail4-dc77884b.jpeg"
+                  /></a>
+                </div>
+                <div class="more-like">
+                  <a href="./movie.html" title="thumbnail"
+                    ><img src="/asset/modal_thumbnail5-7fa6e3c2.jpg"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container py-5" id="footer-container">
+        <div class="row">
+          <div class="col-md-12 text-secondary">
+            <h3 class="mb-2">
+              For order related questions or problems, email to:
+            </h3>
+            <a
+              href="mailto: support@cafedvd.com"
+              class="btn-link h4 text-secondary"
+            >
+              support@cafedvd.com
+            </a>
+          </div>
+          <div class="col my-3">
+            <div class="row">
+              <div class="col-md-3 col-lg-2 links">
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Help Center</a>
+                </div>
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Account</a>
+                </div>
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Sign Up</a>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-2 links">
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Terms of Use</a>
+                </div>
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Privacy</a>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-2 links">
+                <div>
+                  <a class="btn btn-link text-secondary px-0"
+                    >How Cafedvd Works</a
+                  >
+                </div>
+                <div>
+                  <a class="btn btn-link text-secondary px-0"
+                    >Browse all genres</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-12 text-secondary">
+            © <span id="current-year">2023</span> cafedvd, Inc.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+.queue-modal{
+    color: white !important;
+    .modal-content{
+        background-color: rgba($black,.8);
+        .modal-body{
+            .btn-close{
+                padding: calc(var(--bs-modal-header-padding-y) * .5) calc(var(--bs-modal-header-padding-x) * .5);
+                margin: calc(-.5 * var(--bs-modal-header-padding-y)) calc(-.5 * var(--bs-modal-header-padding-x)) calc(-.5 * var(--bs-modal-header-padding-y)) auto;
+                filter: var(--bs-btn-close-white-filter);
+                opacity: 1;
+            }
+            img{
+                width: 100%;
+            }
+            .more-like-wrap{
+                gap:14px;
+            }
+        }
+        
+    }
+}

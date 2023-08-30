@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="/asset/favicon-3feb47d2.png" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Rent Movies and TV Shows on DVD and Blu-ray. Fast, free delivery. No late fees."
+    />
+    
+    <script type="module" crossorigin src="/asset/address/address-b3afa327.js"></script>
+    <link rel="modulepreload" crossorigin href="/asset/Navbar/Navbar-65c3df79.js">
+    <link rel="stylesheet" href="/asset/address/address-7ebaaf46.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg fixed-top px-2 px-md-3 py-2"
+      id="navbar"
+    >
+      <div class="container">
+        <div class="row">
+          <div id="nav-logo-warp" class="col-2 col-md-2">
+            <a class="navbar-brand navbar-logo d-block" href="../main.html"></a>
+          </div>
+          <div id="nav-search-warp" class="col-12 col-md-6 d-none d-md-block">
+            <div class="search-input-group row gx-0">
+              <div class="col-10 col-md-12">
+                <form method="post" action="../search.html">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control border-secondary"
+                      placeholder="Search Movies, TV shows, actors and directors"
+                      aria-label="Search Movies, TV shows, actors and directors"
+                      aria-describedby="extra-buttons"
+                    />
+                    <button
+                      class="btn btn-secondary text-white px-3"
+                      type="button"
+                      id="search-button"
+                    >
+                      <i class="bi-search"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="col-2 d-flex justify-content-end">
+                <button
+                  class="btn btn-secondary text-white d-block d-md-none"
+                  type="button"
+                  id="nav-search-off"
+                >
+                  <i class="bi-x-lg"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            id="nav-button-warp"
+            class="col-10 col-md-4 d-flex justify-content-end align-items-center"
+          >
+            <!-- Only Mobile -->
+            <h6
+              id="nav-search-on"
+              class="text-white mb-0 d-block d-md-none"
+              type="button"
+            >
+              <i class="bi-search"></i>
+            </h6>
+            <!-- Show When User Logout-->
+            <div class="guest d-flex">
+              <a class="btn btn-dark" href="../signin.html" role="button"
+                >Sign In</a
+              >
+              <a class="btn btn-success" href="./plan.html" role="button"
+                >Sign Up</a
+              >
+            </div>
+
+            <!-- Show When Login-->
+            <!-- <div class="user d-flex"> -->
+            <!-- <div class="dropdown d-none d-md-block">
+             <h5
+               class="dropdown-toggle text-white mb-0"
+               role="button"
+               data-toggle="dropdown"
+               aria-expanded="false"
+             >
+               BROWSE
+             </h5>
+             <div class="dropdown-menu">
+               <a class="dropdown-item" href="/NewReleases">New and Popular</a>
+               <a class="dropdown-item" href="/TVShows">TV Shows</a>
+               <a class="dropdown-item" href="/Family">Family</a>
+               <a class="dropdown-item" href="/ClosedCaptions"
+                 >Closed Captions</a
+               >
+               <a class="dropdown-item" href="/AudioDescription"
+                 >Audio Description</a
+               >
+               <a class="dropdown-item" href="/Top100">Netflix Top 100</a>
+               <a class="dropdown-item" href="/TopPicks">Top Picks For You</a>
+               <a class="dropdown-item" href="/Collections">Collections</a>
+               <a class="dropdown-item" href="/Bluray">Try Blu-ray</a>
+               <a class="dropdown-item" href="/RateMovies"
+                 >Rate Movies &amp; TV</a
+               >
+               <a class="dropdown-item" href="/TastePreferences"
+                 >Taste Preferences</a
+               >
+               <a class="dropdown-item" href="/MoviesYouveSeen"
+                 >Rated &amp; Reviewed</a
+               >
+               <a class="dropdown-item" href="/Download">
+                 Download&nbsp;&nbsp;<i
+                   class="fa fa-download"
+                   aria-hidden="true"
+                 ></i>
+               </a>
+             </div>
+           </div> -->
+            <!-- <h5 class="text-white mb-0 d-none d-md-block">QUEUE</h5> -->
+            <!-- <h4
+             class="text-white mb-0 d-block d-md-none"
+             role="button"
+             data-toggle="dropdown"
+             aria-expanded="false"
+           >
+             <i class="bi-save"></i>
+           </h4>
+         </div> -->
+            <div class="dropdown">
+              <h4
+                class="text-white mb-0"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi-list"></i>
+              </h4>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- signup container -->
+    <div class="pt-5" id="address-container-wrapper">
+      <div class="container" id="address-container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <h3 class="mb-2">Add Your Shipping Address</h3>
+            <h6 class="mb-4">
+              Please enter a shipping address where you would like your DVDs
+              delivered with free shipping
+            </h6>
+            <form id="signup-form" novalidate>
+              <div class="form-floating">
+                <input
+                  required
+                  class="form-control validate-first"
+                  id="first-name"
+                  placeholder="First Name"
+                />
+                <label for="floatingInput">First Name</label>
+                <div class="invalid-feedback position-absolute">
+                  First name is required
+                </div>
+              </div>
+              <div class="form-floating">
+                <input
+                  required
+                  class="form-control validate-first"
+                  id="last-name"
+                  placeholder="last name"
+                />
+                <label for="floatingInput">Last Name</label>
+                <div class="invalid-feedback position-absolute">
+                  Last name is required
+                </div>
+              </div>
+              <div class="form-floating">
+                <input
+                  class="form-control"
+                  id="company"
+                  placeholder="Company"
+                />
+                <label for="floatingInput">Company</label>
+              </div>
+              <div class="form-floating">
+                <input
+                  required
+                  class="form-control validate-first"
+                  id="address-line-1"
+                  placeholder="Address Line 1"
+                />
+                <label for="floatingInput">Address Line 1</label>
+                <div class="invalid-feedback position-absolute">
+                  Address is required
+                </div>
+              </div>
+              <div class="form-floating">
+                <input
+                  class="form-control"
+                  id="address-line-2"
+                  placeholder="Address Line 2"
+                />
+                <label for="floatingInput">Address Line 2</label>
+                <div class="invalid-feedback position-absolute"></div>
+              </div>
+              <div class="form-floating">
+                <input
+                  required
+                  class="form-control validate-first"
+                  id="city"
+                  placeholder="City"
+                />
+                <label for="floatingInput">City</label>
+                <div class="invalid-feedback position-absolute">
+                  City is required
+                </div>
+              </div>
+              <div class="form-floating">
+                <select
+                  required
+                  class="form-select validate-first"
+                  id="state"
+                  aria-label="Select your state"
+                >
+                  <option value="">Select your state</option>
+                  <option value="AL">Alabama [AL]</option>
+                  <option value="AK">Alaska [AK]</option>
+                  <option value="AZ">Arizona [AZ]</option>
+                  <option value="AR">Arkansas [AR]</option>
+                  <option value="CA">California [CA]</option>
+                  <option value="CO">Colorado [CO]</option>
+                  <option value="CT">Connecticut [CT]</option>
+                  <option value="DE">Delaware [DE]</option>
+                  <option value="DC">District Of Columbia [DC]</option>
+                  <option value="FL">Florida [FL]</option>
+                  <option value="GA">Georgia [GA]</option>
+                  <option value="HI">Hawaii [HI]</option>
+                  <option value="ID">Idaho [ID]</option>
+                  <option value="IL">Illinois [IL]</option>
+                  <option value="IN">Indiana [IN]</option>
+                  <option value="IA">Iowa [IA]</option>
+                  <option value="KS">Kansas [KS]</option>
+                  <option value="KY">Kentucky [KY]</option>
+                  <option value="LA">Louisiana [LA]</option>
+                  <option value="ME">Maine [ME]</option>
+                  <option value="MD">Maryland [MD]</option>
+                  <option value="MA">Massachusetts [MA]</option>
+                  <option value="MI">Michigan [MI]</option>
+                  <option value="MN">Minnesota [MN]</option>
+                  <option value="MS">Mississippi [MS]</option>
+                  <option value="MO">Missouri [MO]</option>
+                  <option value="MT">Montana [MT]</option>
+                  <option value="NE">Nebraska [NE]</option>
+                  <option value="NV">Nevada [NV]</option>
+                  <option value="NH">New Hampshire [NH]</option>
+                  <option value="NJ">New Jersey [NJ]</option>
+                  <option value="NM">New Mexico [NM]</option>
+                  <option value="NY">New York [NY]</option>
+                  <option value="NC">North Carolina [NC]</option>
+                  <option value="ND">North Dakota [ND]</option>
+                  <option value="OH">Ohio [OH]</option>
+                  <option value="OK">Oklahoma [OK]</option>
+                  <option value="OR">Oregon [OR]</option>
+                  <option value="PA">Pennsylvania [PA]</option>
+                  <option value="PR">Puerto Rico [PR]</option>
+                  <option value="RI">Rhode Island [RI]</option>
+                  <option value="SC">South Carolina [SC]</option>
+                  <option value="SD">South Dakota [SD]</option>
+                  <option value="TN">Tennessee [TN]</option>
+                  <option value="TX">Texas [TX]</option>
+                  <option value="UT">Utah [UT]</option>
+                  <option value="VT">Vermont [VT]</option>
+                  <option value="VI">Virgin Islands [VI]</option>
+                  <option value="VA">Virginia [VA]</option>
+                  <option value="WA">Washington [WA]</option>
+                  <option value="WV">West Virginia [WV]</option>
+                  <option value="WI">Wisconsin [WI]</option>
+                  <option value="WY">Wyoming [WY]</option>
+                  <option value="AS">American Samoa [AS]</option>
+                  <option value="FM">
+                    Federated States Of Micronesia [FM]
+                  </option>
+                  <option value="GU">Guam [GU]</option>
+                  <option value="MH">Marshall Islands [MH]</option>
+                  <option value="MP">Northern Mariana Islands [MP]</option>
+                  <option value="PW">Palau [PW]</option>
+                  <option value="AA">Military Americas, Florida, [AA]</option>
+                  <option value="AP">Military California, Pacific [AP]</option>
+                  <option value="AE">
+                    Military International, New York [AE]
+                  </option>
+                </select>
+                <label for="floatingSelect">State</label>
+                <div class="invalid-feedback position-absolute">
+                  State is required
+                </div>
+              </div>
+              <div class="form-floating">
+                <input
+                  required
+                  class="form-control validate-first"
+                  id="zipcode"
+                  placeholder="Zipcode"
+                />
+                <label for="floatingInput">Zipcode</label>
+                <div class="invalid-feedback position-absolute">
+                  Zip code is required
+                </div>
+              </div>
+              <div class="col-12 col-md-6 mt-5">
+                <button type="submit" class="btn btn-success w-100">
+                  Continue
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container py-5" id="footer-container">
+        <div class="row">
+          <div class="col-md-12 text-secondary">
+            <h3 class="mb-2">
+              For order related questions or problems, email to:
+            </h3>
+            <a
+              href="mailto: support@cafedvd.com"
+              class="btn-link h4 text-secondary"
+            >
+              support@cafedvd.com
+            </a>
+          </div>
+          <div class="col my-3">
+            <div class="row">
+              <div class="col-md-3 col-lg-2 links">
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Help Center</a>
+                </div>
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Sign Up</a>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-2 links">
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Terms of Use</a>
+                </div>
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Privacy</a>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-2 links">
+                <div>
+                  <a class="btn btn-link text-secondary px-0"
+                    >How Cafedvd Works</a
+                  >
+                </div>
+                <div>
+                  <a class="btn btn-link text-secondary px-0"
+                    >Browse all genres</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-12 text-secondary">
+            © <span id="current-year">2023</span> cafedvd, Inc.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

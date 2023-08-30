@@ -1,0 +1,11 @@
+.carousel{
+    height: 88vh;
+    .carousel-inner, & .carousel-item{
+        height: 100%;
+        .thumbnail{
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+    }
+}

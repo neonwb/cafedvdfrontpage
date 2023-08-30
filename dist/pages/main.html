@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="/asset/favicon-3feb47d2.png" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Rent Movies and TV Shows on DVD and Blu-ray. Fast, free delivery. No late fees."
+    />
+    
+    <script type="module" crossorigin src="/asset/main/main-982326ad.js"></script>
+    <link rel="modulepreload" crossorigin href="/asset/Navbar/Navbar-65c3df79.js">
+    <link rel="modulepreload" crossorigin href="/asset/Queue/Queue-6b74ba0f.js">
+    <link rel="stylesheet" href="/asset/main/main-0e21a65f.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg fixed-top px-2 px-md-3 py-2"
+      id="navbar"
+    >
+      <div class="container">
+        <div class="row">
+          <div id="nav-logo-warp" class="col-2 col-md-2">
+            <a class="navbar-brand navbar-logo d-block" href="./main.html"></a>
+          </div>
+          <div id="nav-search-warp" class="col-12 col-md-6 d-none d-md-block">
+            <div class="search-input-group row gx-0">
+              <div class="col-10 col-md-12">
+                <form method="post" action="./search.html">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control border-secondary"
+                      placeholder="eeSearch Movies, TV shows, actors and directors"
+                      aria-label="eeSearch Movies, TV shows, actors and directors"
+                      aria-describedby="extra-buttons"
+                    />
+                    <button
+                      class="btn btn-secondary text-white px-3"
+                      type="submit"
+                      id="search-button"
+                    >
+                      <i class="bi-search"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="col-2 d-flex justify-content-end">
+                <button
+                  class="btn btn-secondary text-white d-block d-md-none"
+                  type="button"
+                  id="nav-search-off"
+                >
+                  <i class="bi-x-lg"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            id="nav-button-warp"
+            class="col-10 col-md-4 d-flex justify-content-end align-items-center"
+          >
+            <!-- Only Mobile -->
+            <h6
+              id="nav-search-on"
+              class="text-white mb-0 d-block d-md-none"
+              type="button"
+            >
+              <i class="bi-search"></i>
+            </h6>
+            <!-- Show When User Logout-->
+            <div class="guest d-flex">
+              <a class="btn btn-dark" href="./signin.html" role="button"
+                >Sign In</a
+              >
+              <a class="btn btn-success" href="./signup/plan.html" role="button"
+                >Sign Up</a
+              >
+            </div>
+
+            <!-- Show When Login-->
+            <!-- <div class="user d-flex"> -->
+            <!-- <div class="dropdown d-none d-md-block">
+              <h5
+                class="dropdown-toggle text-white mb-0"
+                role="button"
+                data-toggle="dropdown"
+                aria-expanded="false"
+              >
+                BROWSE
+              </h5>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/NewReleases">New and Popular</a>
+                <a class="dropdown-item" href="/TVShows">TV Shows</a>
+                <a class="dropdown-item" href="/Family">Family</a>
+                <a class="dropdown-item" href="/ClosedCaptions"
+                  >Closed Captions</a
+                >
+                <a class="dropdown-item" href="/AudioDescription"
+                  >Audio Description</a
+                >
+                <a class="dropdown-item" href="/Top100">Netflix Top 100</a>
+                <a class="dropdown-item" href="/TopPicks">Top Picks For You</a>
+                <a class="dropdown-item" href="/Collections">Collections</a>
+                <a class="dropdown-item" href="/Bluray">Try Blu-ray</a>
+                <a class="dropdown-item" href="/RateMovies"
+                  >Rate Movies &amp; TV</a
+                >
+                <a class="dropdown-item" href="/TastePreferences"
+                  >Taste Preferences</a
+                >
+                <a class="dropdown-item" href="/MoviesYouveSeen"
+                  >Rated &amp; Reviewed</a
+                >
+                <a class="dropdown-item" href="/Download">
+                  Download&nbsp;&nbsp;<i
+                    class="fa fa-download"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </div>
+            </div> -->
+            <!-- <h5 class="text-white mb-0 d-none d-md-block">QUEUE</h5> -->
+            <!-- <h4
+              class="text-white mb-0 d-block d-md-none"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="bi-save"></i>
+            </h4>
+          </div> -->
+            <div class="dropdown">
+              <h4
+                class="text-white mb-0"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi-list"></i>
+              </h4>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- carousel -->
+    <div
+      id="main-carousel"
+      class="carousel slide carousel-fade"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#main-carousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#main-carousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#main-carousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div
+          class="carousel-item thumbnail active"
+          style="background-image: url('/asset/carousel1-15f592a7.jpeg')"
+        >
+          <div class="carousel-caption d-md-block py-5">
+            <!-- User Caption -->
+            <div class="user-caption">
+              <h1 class="mb-3">
+                <a
+                  href="/Movie/Godzilla-vs-Kong/81183713"
+                  class="text-white h1 link-underline link-underline-opacity-0"
+                  title="Godzilla vs. Kong"
+                  >Godzilla vs. Kong</a
+                >
+              </h1>
+              <div class="row g-0 mb-4 align-items-center">
+                <div class="star-wrap mb-md-0" data-user-rate="3.7">
+                  <div class="star-base">
+                    <i class="bi bi-star-fill" data-rate-value="5"></i>
+                    <i class="bi bi-star-fill" data-rate-value="4"></i>
+                    <i class="bi bi-star-fill" data-rate-value="3"></i>
+                    <i class="bi bi-star-fill" data-rate-value="2"></i>
+                    <i class="bi bi-star-fill" data-rate-value="1"></i>
+                  </div>
+                  <div class="star-mask">
+                    <div class="star-rate">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto not-interested mx-3">
+                  <i class="bi bi-x-circle"></i>
+                </div>
+                <p class="mt-3 mt-md-0 mb-0 col-12 col-md-auto">
+                  <span>2021</span>
+                  <span class="border p-1">PG-13</span>
+                  <span>1h 53m</span>
+                  <span class="d-none d-md-inline-block">
+                    <span>Blu-ray</span>
+                    <span>/</span>
+                    <span>DVD</span>
+                  </span>
+                </p>
+              </div>
+              <div class="row g-3">
+                <div class="col-12 col-sm-5">
+                  <button
+                    class="btn btn-lg btn-success w-100"
+                    data-movieid="81183713"
+                    data-bs-toggle="modal"
+                    data-bs-target="#queue-modal"
+                  >
+                    + Queue
+                  </button>
+                </div>
+                <div class="col-12 col-sm-5">
+                  <button
+                    class="btn btn-lg btn-outline-light w-100"
+                    data-id="81183713"
+                  >
+                    <i class="bi bi-play"></i>
+                    <span class="clip">Play</span>trailer
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Guest Caption -->
+            <!-- <div class="guest-caption">
+              <h1 class="mb-3">First Movies Delivered</h1>
+              <h4 class="mb-4">Free shipping. No due dates or late fees.</h4>
+              <div class="row g-3">
+                <div class="col-12 col-sm-5">
+                  <button
+                    class="btn btn-lg btn-success w-100"
+                    data-movieid="81183713"
+                  >
+                    Sign Up
+                  </button>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div
+          class="carousel-item thumbnail"
+          style="background-image: url('/asset/carousel2-9e0dd2e8.jpeg')"
+        >
+          <div class="carousel-caption d-md-block py-5">
+            <!-- User Caption -->
+            <!-- <div class="user-caption">
+              <h1 class="mb-3">
+                <a
+                  href="/Movie/Godzilla-vs-Kong/81183713"
+                  class="text-white h1 link-underline link-underline-opacity-0"
+                  title="Godzilla vs. Kong"
+                  >Godzilla vs. Kong</a
+                >
+              </h1>
+              <div class="row g-0 mb-4 align-items-center">
+                <div class="star-wrap mb-md-0" data-user-rate="3.7">
+                  <div class="star-base">
+                    <i class="bi bi-star-fill" data-rate-value="5"></i>
+                    <i class="bi bi-star-fill" data-rate-value="4"></i>
+                    <i class="bi bi-star-fill" data-rate-value="3"></i>
+                    <i class="bi bi-star-fill" data-rate-value="2"></i>
+                    <i class="bi bi-star-fill" data-rate-value="1"></i>
+                  </div>
+                  <div class="star-mask">
+                    <div class="star-rate">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto not-interested mx-3">
+                  <i class="bi bi-x-circle"></i>
+                </div>
+                <p class="mt-3 mt-md-0 mb-0 col-12 col-md-auto">
+                  <span>2021</span>
+                  <span class="border p-1">PG-13</span>
+                  <span>1h 53m</span>
+                  <span class="d-none d-md-inline-block">
+                    <span>Blu-ray</span>
+                    <span>/</span>
+                    <span>DVD</span>
+                  </span>
+                </p>
+              </div>
+              <div class="row g-3">
+                <div class="col-12 col-sm-5">
+                  <button
+                    class="btn btn-lg btn-success w-100"
+                    data-movieid="81183713"
+                  >
+                    + Queue
+                  </button>
+                </div>
+                <div class="col-12 col-sm-5">
+                  <button
+                    class="btn btn-lg btn-outline-success w-100"
+                    data-id="81183713"
+                  >
+                    <i class="bi bi-play"></i>
+                    <span class="clip">Play</span>trailer
+                  </button>
+                </div>
+              </div>
+            </div> -->
+            <!-- Guest Caption -->
+            <div class="guest-caption">
+              <h1 class="mb-3">More to Watch</h1>
+              <h4 class="mb-4">New movies and shows added weekly.</h4>
+              <div class="row g-3">
+                <div class="col-12 col-sm-5">
+                  <button
+                    class="btn btn-lg btn-success w-100"
+                    data-movieid="81183713"
+                  >
+                    Sign Up
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="carousel-item thumbnail"
+          style="background-image: url('/asset/carousel3-d185ead0.jpeg')"
+        >
+          <div class="carousel-caption d-md-block py-5">
+            <!-- User Caption -->
+            <!-- <div class="user-caption">
+              <h1 class="mb-3">
+                <a
+                  href="/Movie/Godzilla-vs-Kong/81183713"
+                  class="text-white h1 link-underline link-underline-opacity-0"
+                  title="Godzilla vs. Kong"
+                  >Godzilla vs. Kong</a
+                >
+              </h1>
+              <div class="row g-0 mb-4 align-items-center">
+                <div class="star-wrap mb-md-0" data-user-rate="3.7">
+                  <div class="star-base">
+                    <i class="bi bi-star-fill" data-rate-value="5"></i>
+                    <i class="bi bi-star-fill" data-rate-value="4"></i>
+                    <i class="bi bi-star-fill" data-rate-value="3"></i>
+                    <i class="bi bi-star-fill" data-rate-value="2"></i>
+                    <i class="bi bi-star-fill" data-rate-value="1"></i>
+                  </div>
+                  <div class="star-mask">
+                    <div class="star-rate">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto not-interested mx-3">
+                  <i class="bi bi-x-circle"></i>
+                </div>
+                <p class="mt-3 mt-md-0 mb-0 col-12 col-md-auto">
+                  <span>2021</span>
+                  <span class="border p-1">PG-13</span>
+                  <span>1h 53m</span>
+                  <span class="d-none d-md-inline-block">
+                    <span>Blu-ray</span>
+                    <span>/</span>
+                    <span>DVD</span>
+                  </span>
+                </p>
+              </div>
+              <div class="row g-3">
+                <div class="col-12 col-sm-5">
+                  <button
+                    class="btn btn-lg btn-success w-100"
+                    data-movieid="81183713"
+                  >
+                    + Queue
+                  </button>
+                </div>
+                <div class="col-12 col-sm-5">
+                  <button
+                    class="btn btn-lg btn-outline-success w-100"
+                    data-id="81183713"
+                  >
+                    <i class="bi bi-play"></i>
+                    <span class="clip">Play</span>trailer
+                  </button>
+                </div>
+              </div>
+            </div> -->
+            <!-- Guest Caption -->
+            <div class="guest-caption">
+              <h1 class="mb-3">Must-Watch TV</h1>
+              <h4 class="mb-4">
+                Shows from every TV network, including HBO and Starz.
+              </h4>
+              <div class="row g-3">
+                <div class="col-12 col-sm-5">
+                  <a
+                    class="btn btn-lg btn-success w-100"
+                    data-movieid="81183713"
+                    href="./signup/plan.html"
+                  >
+                    Sign Up
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#main-carousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#main-carousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="pt-5" id="main-container-wrapper">
+      <div class="container" id="main-container">
+        <div class="row gx-0 movie-list" id="new-movies">
+          <div class="col-lg-12 pb-3">
+            <h2>New movies and TV shows on DVD and Blu-ray</h2>
+          </div>
+          <div class="slim" data-dvd-toggle="overlay-info">
+            <span
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Avatar: The Way of Water">
+                <img src="/asset/example-landscape-f9bbe12e.jpeg" />
+              </a>
+            </span>
+          </div>
+          <div class="slim" data-dvd-toggle="overlay-info">
+            <span
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Avatar: The Way of Water"
+                ><img src="/asset/example-landscape-f9bbe12e.jpeg"
+              /></a>
+            </span>
+          </div>
+          <div class="wide" data-dvd-toggle="overlay-info">
+            <span
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="1923: Season 1"
+                ><img src="/asset/example-portrait-9441f25e.jpeg"
+              /></a>
+            </span>
+          </div>
+          <div class="slim" data-dvd-toggle="overlay-info">
+            <span
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Avatar: The Way of Water"
+                ><img src="/asset/example-landscape-f9bbe12e.jpeg"
+              /></a>
+            </span>
+          </div>
+          <div class="slim" data-dvd-toggle="overlay-info">
+            <span
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Avatar: The Way of Water">
+                <img src="/asset/example-landscape-f9bbe12e.jpeg" />
+              </a>
+            </span>
+          </div>
+          <div class="wide" data-dvd-toggle="overlay-info">
+            <span
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Book Club: The Next Chapter"
+                ><img src="/asset/example-portrait-9441f25e.jpeg"
+              /></a>
+            </span>
+          </div>
+          <div class="slim" data-dvd-toggle="overlay-info">
+            <span
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a
+                href="/Movie/Polite-Society/81428364?dsrc=DVDWEB_NMHOME_NMHEADER_OTHER"
+                title="Polite Society"
+                ><img src="/asset/example-landscape-f9bbe12e.jpeg"
+              /></a>
+            </span>
+          </div>
+          <div class="wide" data-dvd-toggle="overlay-info">
+            <span
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Book Club: The Next Chapter"
+                ><img src="/asset/example-portrait-9441f25e.jpeg"
+              /></a>
+            </span>
+          </div>
+          <div class="slim" data-dvd-toggle="overlay-info">
+            <span
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Polite Society"
+                ><img src="/asset/example-landscape-f9bbe12e.jpeg"
+              /></a>
+            </span>
+          </div>
+          <div class="slim" data-dvd-toggle="overlay-info">
+            <span
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Polite Society"
+                ><img src="/asset/example-landscape-f9bbe12e.jpeg"
+              /></a>
+            </span>
+          </div>
+          <div class="wide" data-dvd-toggle="overlay-info">
+            <span
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Book Club: The Next Chapter"
+                ><img src="/asset/example-portrait-9441f25e.jpeg"
+              /></a>
+            </span>
+          </div>
+          <div class="wide" data-dvd-toggle="overlay-info">
+            <span
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Book Club: The Next Chapter"
+                ><img src="/asset/example-portrait-9441f25e.jpeg"
+              /></a>
+            </span>
+          </div>
+          <div class="slim" data-dvd-toggle="overlay-info">
+            <span
+              class="d-inline-block"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-custom-class="popover-w400"
+            >
+              <a href="./movie.html" title="Polite Society"
+                ><img src="/asset/example-landscape-f9bbe12e.jpeg"
+              /></a>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div id="how-it-works" class="d-flex align-items-center">
+        <div class="container">
+          <div class="content text-white">
+            <h2 class="mb-5">How it works</h2>
+            <div class="step-wrap">
+              <h3 class="order">1.</h3>
+              <div class="ps-3">
+                <h4>Create your list</h4>
+                <p>Browse from thousands of movies and shows.</p>
+              </div>
+            </div>
+            <div class="step-wrap">
+              <h3 class="order">2.</h3>
+              <div class="ps-3">
+                <h4>Free delivery</h4>
+                <p>We send out your disc the next business day.</p>
+              </div>
+            </div>
+            <div class="step-wrap">
+              <h3 class="order">3.</h3>
+              <div class="ps-3">
+                <h4>Watch and repeat</h4>
+                <p>Free returns, plus no due dates or late fees.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row g-3 signup-wrap">
+            <div class="col-12 col-sm-5">
+              <a class="btn btn-lg btn-success w-100" href="./signup/plan.html">
+                Sign Up
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div
+        class="modal fade queue-modal"
+        id="queue-modal"
+        tabindex="-1"
+        aria-labelledby="queue-modal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-body p-3 p-sm-4 pt-sm-3">
+              <div class="d-flex mb-3">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="row g-3 mb-4">
+                <div class="col-3 col-lg-2">
+                  <a href="./movie.html" title="thumbnail"
+                    ><img src="/asset/modal_rec1-5439d9f6.jpeg"
+                  /></a>
+                </div>
+                <div class="col-9 col-lg-7">
+                  <h5 id="queue-action-info"></h5>
+                  <a class="btn btn-link text-success h-2">Go to Queue</a>
+                </div>
+                <div class="col-12 col-lg-3" id="queue-btn-group">
+                  <div class="row">
+                    <div class="col-6 col-lg-12">
+                      <button
+                        id="move-top"
+                        class="btn btn-success w-100"
+                        data-movieid="81183713"
+                      >
+                        Move to top
+                      </button>
+                    </div>
+                    <div class="col-6 col-lg-12 mt-lg-3">
+                      <button
+                        id="undo-add"
+                        class="btn btn-outline-light w-100"
+                        data-movieid="81183713"
+                      >
+                        Undo Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-none d-sm-flex">
+                <h5>More like Star Wars: Episode IV: A New Hope</h5>
+              </div>
+              <div class="d-none d-sm-flex more-like-wrap">
+                <div class="more-like">
+                  <a href="./movie.html" title="thumbnail"
+                    ><img src="/asset/modal_thumbnail-53b9ada4.jpeg"
+                  /></a>
+                </div>
+                <div class="more-like">
+                  <a href="./movie.html" title="thumbnail"
+                    ><img src="/asset/modal_thumbnail2-4e8763df.jpeg"
+                  /></a>
+                </div>
+                <div class="more-like">
+                  <a href="./movie.html" title="thumbnail"
+                    ><img src="/asset/modal_thumbnail3-1fdeb9c0.jpeg"
+                  /></a>
+                </div>
+                <div class="more-like">
+                  <a href="./movie.html" title="thumbnail"
+                    ><img src="/asset/modal_thumbnail4-dc77884b.jpeg"
+                  /></a>
+                </div>
+                <div class="more-like">
+                  <a href="./movie.html" title="thumbnail"
+                    ><img src="/asset/modal_thumbnail5-7fa6e3c2.jpg"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container py-5" id="footer-container">
+        <div class="row">
+          <div class="col-md-12 text-secondary">
+            <h3 class="mb-2">
+              For order related questions or problems, email to:
+            </h3>
+            <a
+              href="mailto: support@cafedvd.com"
+              class="btn-link h4 text-secondary"
+            >
+              support@cafedvd.com
+            </a>
+          </div>
+          <div class="col my-3">
+            <div class="row">
+              <div class="col-md-3 col-lg-2 links">
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Help Center</a>
+                </div>
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Account</a>
+                </div>
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Sign Up</a>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-2 links">
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Terms of Use</a>
+                </div>
+                <div>
+                  <a class="btn btn-link text-secondary px-0">Privacy</a>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-2 links">
+                <div>
+                  <a class="btn btn-link text-secondary px-0"
+                    >How Cafedvd Works</a
+                  >
+                </div>
+                <div>
+                  <a class="btn btn-link text-secondary px-0"
+                    >Browse all genres</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-12 text-secondary">
+            © <span id="current-year">2023</span> cafedvd, Inc.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

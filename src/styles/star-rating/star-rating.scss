@@ -1,0 +1,54 @@
+.star-wrap{
+    height:30px;
+    width: 120px;
+    position: relative;
+    &:hover{
+        .star-mask{
+            width: 0px !important;
+        }    
+    }
+    .star-base{
+        position: absolute;
+        width: 120px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        text-align: left;
+        color:$secondary;
+        .bi-star-fill:hover, .bi-star-fill:hover ~ i{
+            color:$green-300;
+        }
+    }
+    .star-mask{
+        position: absolute;
+        // caculate user score here
+        width: 48%;
+        ///////////////////////////
+        overflow: hidden;
+        .star-rate{
+            width: 120px;
+            display: flex;
+            justify-content: space-between;
+            text-align: left;  
+            color:$success;
+        }   
+    }
+    i{
+        font-size: 20px;
+    }
+    &.small{
+        &{
+            height:22.5px !important;
+            width: 100px !important;
+            .star-base{
+                width: 100px !important;
+            }
+            .star-mask .star-rate{
+                width: 100px !important;
+            }
+        }
+        i{
+            font-size: 15px !important;
+        }
+    }
+}

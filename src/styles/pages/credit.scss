@@ -1,0 +1,23 @@
+@import "@styles/common.scss";
+
+#credit-container-wrapper {
+    margin: 75px 0; 
+    min-height:75vh;
+    .form-floating{
+       margin-bottom: $spacer * 1.7;
+    }
+    .credit-wrap{
+        .credit-logo{
+            opacity: 0.3;
+            width: 35px;
+            &:not(:last-child){
+                margin-right: $spacer * 0.5;
+                
+            }
+            &.selected{
+                opacity: 1;
+            }
+        }
+        
+    }
+}

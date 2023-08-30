@@ -1,0 +1,9 @@
+@import "@styles/common.scss";
+
+#address-container-wrapper {
+    margin: 75px 0; 
+    min-height:75vh;
+    .form-floating{
+       margin-bottom: $spacer * 1.5;
+    }
+}
